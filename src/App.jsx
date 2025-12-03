@@ -151,57 +151,62 @@ function App() {
       // ----------------------------------------------------
       // NIVEL 3: Perfil (About)
       // ----------------------------------------------------
-      case 3:
-        return (
-          <motion.section 
-            key="level-3"
-            {...animationProps}
-            className="space-y-8 py-10"
-          >
-            <h1 className="text-5xl md:text-7xl mb-8 border-l-4 pl-4 border-green-500">
-                {t.nav.about}
-            </h1>
+case 3:
+  return (
+    <motion.section 
+      key="level-3"
+      {...animationProps}
+      className="space-y-8 py-10"
+    >
+      <h1 className="text-5xl md:text-7xl mb-4 border-l-4 pl-4 border-green-500">
+          {t.nav.about}
+      </h1>
+      
+      {/* --- LÍNEA AGREGADA: TÍTULO PROFESIONAL --- */}
+      <h2 className="text-3xl md:text-5xl opacity-80 mb-8 flex items-center gap-2">
+          <Code /> {t.hero.role} 
+      </h2>
+      
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className={`p-6 border-2 ${darkMode ? 'border-green-800 bg-gray-800/50' : 'border-gray-300 bg-white'}`}>
+          <h4 className="text-2xl mb-4 underline decoration-wavy">BIO</h4>
+          <p className="text-xl leading-relaxed">{t.about.objective}</p>
+          
+          <h4 className="text-2xl mt-6 mb-2 underline decoration-wavy uppercase">{t.about.hobbiesTitle}</h4>
+          <div className="flex flex-wrap gap-3">
+            {t.about.hobbies.map(hobby => (
+              <span key={hobby} className={`px-2 py-1 text-base border ${darkMode ? 'border-green-700 bg-green-900' : 'border-gray-500 bg-gray-200'}`}>
+                {hobby}
+              </span>
+            ))}
+          </div>
+        </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className={`p-6 border-2 ${darkMode ? 'border-green-800 bg-gray-800/50' : 'border-gray-300 bg-white'}`}>
-                <h4 className="text-2xl mb-4 underline decoration-wavy">BIO</h4>
-                <p className="text-xl leading-relaxed">{t.about.objective}</p>
-                
-                <h4 className="text-2xl mt-6 mb-2 underline decoration-wavy uppercase">{t.about.hobbiesTitle}</h4>
-                <div className="flex flex-wrap gap-3">
-                  {t.about.hobbies.map(hobby => (
-                    <span key={hobby} className={`px-2 py-1 text-base border ${darkMode ? 'border-green-700 bg-green-900' : 'border-gray-500 bg-gray-200'}`}>
-                      {hobby}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-2xl mb-4 flex items-center gap-2"><Cpu /> SKILL TREE</h4>
-                <div className="flex flex-wrap gap-3">
-                  {personalData.skills.map((skill) => (
-                    <motion.div 
-                      key={skill}
-                      whileHover={{ scale: 1.1 }}
-                      className={`px-4 py-2 text-xl font-bold border-2 shadow-[4px_4px_0px_0px] 
-                        ${darkMode 
-                          ? 'border-green-500 shadow-green-700 bg-gray-900' 
-                          : 'border-black shadow-gray-400 bg-white'}`}
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-                
-                <h4 className="text-2xl mt-8 mb-4 uppercase">{t.about.softSkillsTitle}</h4>
-                <ul className="list-disc list-inside text-xl space-y-2">
-                  {t.about.softSkills.map(s => <li key={s}>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-          </motion.section>
-        );
+        <div>
+          <h4 className="text-2xl mb-4 flex items-center gap-2"><Cpu /> SKILL TREE</h4>
+          <div className="flex flex-wrap gap-3">
+            {personalData.skills.map((skill) => (
+              <motion.div 
+                key={skill}
+                whileHover={{ scale: 1.1 }}
+                className={`px-4 py-2 text-xl font-bold border-2 shadow-[4px_4px_0px_0px] 
+                  ${darkMode 
+                    ? 'border-green-500 shadow-green-700 bg-gray-900' 
+                    : 'border-black shadow-gray-400 bg-white'}`}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+          
+          <h4 className="text-2xl mt-8 mb-4 uppercase">{t.about.softSkillsTitle}</h4>
+          <ul className="list-disc list-inside text-xl space-y-2">
+            {t.about.softSkills.map(s => <li key={s}>{s}</li>)}
+          </ul>
+        </div>
+      </div>
+    </motion.section>
+  );
 
       // ----------------------------------------------------
       // NIVEL 4: Experiencia (XP)
