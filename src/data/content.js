@@ -108,7 +108,7 @@ export const personalData = {
   name: "John Peña (Jhoncii)",
   email: "johnpenia28@gmail.com",
   githubUrl: "https://github.com/Jhoncii",
-  linkedinUrl: "https://ec.linkedin.com/in/john-pe%C3%b1a-762325271",
+  linkedinUrl: "https://www.linkedin.com/in/john-alejandro-peña-lópez-762325271/",
   skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "Next.js", "React", "Angular", "Vue.js", "NestJS", "Express.js"],
   projects: [
     {
