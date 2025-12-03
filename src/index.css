@@ -1,0 +1,49 @@
+
+ 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'VT323', monospace; 
+    overflow-x: hidden;
+    background-color: white; 
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.25rem;
+}
+
+
+.dark body {
+    background-color: #1a1a1a; 
+    color: #4ade80; 
+}
+
+
+.blinking-cursor {
+  font-weight: 700;
+  color: #4ade80;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: #4ade80 }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #4ade80; 
+  border: 2px solid #1a1a1a;
+}
